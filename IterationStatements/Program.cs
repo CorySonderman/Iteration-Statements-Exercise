@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.Design;
-using System.Net.NetworkInformation;
-using System.Security.Cryptography.X509Certificates;
+﻿
 
 namespace IterationStatements
 {
@@ -31,11 +29,11 @@ namespace IterationStatements
         //Call the methods to test them in the Main method below
         static void Main(string[] args)
         {
-            LandOf1000Numbers();
-            Console.WriteLine();
-
             ThreeByThree();
             Console.WriteLine();
+
+            LandOf1000Numbers();
+            Console.WriteLine();           
 
             Console.WriteLine(Twinsies(3, 8));
             Console.WriteLine();
