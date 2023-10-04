@@ -36,7 +36,7 @@ namespace IterationStatements
 
             ThreeByThree();
             Console.WriteLine();
-            
+
             Console.WriteLine(Twinsies(3, 8));
             Console.WriteLine();
 
@@ -61,125 +61,125 @@ namespace IterationStatements
             Console.WriteLine();
 
             //Old Enough To Vote
-                Console.WriteLine("Please enter your age.");
-                string input = Console.ReadLine();
+            Console.WriteLine("Please enter your age.");
+            string input = Console.ReadLine();
 
-                if (int.TryParse(input, out int age))
+            if (int.TryParse(input, out int age))
+            {
+                bool canVote = OldEnoughToVote(age);
+
+                if (canVote)
                 {
-                    bool canVote = OldEnoughToVote(age);
-
-                    if (canVote)
-                    {
-                        Console.WriteLine("You're old enough vote.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Sorry. You're too young to vote.");
-                    }
+                    Console.WriteLine("You're old enough vote.");
                 }
                 else
                 {
-                    Console.WriteLine("Invalid input.");
+                    Console.WriteLine("Sorry. You're too young to vote.");
                 }
-                Console.WriteLine();    
-            
-                //Range -10 and 10
-                Console.WriteLine("Please pick a number.");
-                if (int.TryParse(Console.ReadLine(), out int userNumber))
+            }
+            else
+            {
+                Console.WriteLine("Invalid input.");
+            }
+            Console.WriteLine();
+
+            //Range -10 and 10
+            Console.WriteLine("Please pick a number.");
+            if (int.TryParse(Console.ReadLine(), out int userNumber))
+            {
+                if (TenByNegTen(userNumber, -10, 10))
                 {
-                    if (TenByNegTen(userNumber, -10, 10))
-                    {
-                        Console.WriteLine("Your number is between 10 and -10.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Your number is not between 10 and -10.");
-                    }
+                    Console.WriteLine("Your number is between 10 and -10.");
                 }
                 else
                 {
-                    Console.WriteLine("Invalid input. You're PC has been cursed forever");
-                } 
-                Console.WriteLine();
-
-                //Multiplication Table
-                Console.WriteLine("Pick a number and I will give you the multiplication table upto 12.");
-                if (int.TryParse(Console.ReadLine(), out int input1))
-                {
-                    TimesTable(input1);
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input. Your computer will self distruct in 3 seconds.");
-                }
-                Console.WriteLine();
-            
-            static void LandOf1000Numbers()
-            {
-                for (var i = -1000; i <= 1000; i++)
-                {
-                    Console.WriteLine(i);
+                    Console.WriteLine("Your number is not between 10 and -10.");
                 }
             }
-            /* Important.  I don't understand.  When I run the progrma in it's
-             * entirety ThreeByThree gets skipped. But When I put in a break point
-             * ThreeByThree functions properly*/
-            static void ThreeByThree()
+            else
             {
-                for (var t = 3; t <= 999; t += 3)
-                {
-                    Console.WriteLine(t);
-                }
+                Console.WriteLine("Invalid input. You're PC has been cursed forever");
             }
+            Console.WriteLine();
 
-            static bool Twinsies(int pick1, int pick2)
+            //Multiplication Table
+            Console.WriteLine("Pick a number and I will give you the multiplication table upto 12.");
+            if (int.TryParse(Console.ReadLine(), out int input1))
             {
-                var equal = (pick1 == pick2) ? true : false;
-                return equal;
+                TimesTable(input1);
             }
-
-            static bool EvenOrOdd(int pick)
+            else
             {
-                return pick % 2 == 0;
+                Console.WriteLine("Invalid input. Your computer will self distruct in 3 seconds.");
             }
-
-            static void PositiveOrNegative(int number)
+            Console.WriteLine();
+        }
+        public static void LandOf1000Numbers()
+        {
+            for (var i = -1000; i <= 1000; i++)
             {
-                if (number > 0)
-                {
-                    Console.WriteLine("Your number is positive.");
-                }
-                else if (number < 0)
-                {
-                    Console.WriteLine("Your number is negative.");
-                }
-                else
-                {
-                    Console.WriteLine("Your number is neutral.");
-                }
-            }
-
-            static bool OldEnoughToVote(int age)
-            {
-                return age >= 18;
-            }
-
-            static bool TenByNegTen(int number, int min, int max)
-            {
-                return number >= min && number <= max;
-            }
-
-            static void TimesTable(int input1)
-            {
-                Console.WriteLine($"Multiplication table for {input1}:");
-
-                for (int i = 1; i <= 12; i++)
-                {
-                    int result = input1 * i;
-                    Console.WriteLine($"{input1} x {i} = {result}");
-                }
+                Console.WriteLine(i);
             }
         }
+        /* Important.  I don't understand.  When I run the progrma in it's
+         * entirety ThreeByThree gets skipped. But When I put in a break point
+         * ThreeByThree functions properly*/
+        public static void ThreeByThree()
+        {
+            for (var t = 3; t <= 999; t += 3)
+            {
+                Console.WriteLine(t);
+            }
+        }
+
+        public static bool Twinsies(int pick1, int pick2)
+        {
+            var equal = (pick1 == pick2) ? true : false;
+            return equal;
+        }
+
+        public static bool EvenOrOdd(int pick)
+        {
+            return pick % 2 == 0;
+        }
+
+        public static void PositiveOrNegative(int number)
+        {
+            if (number > 0)
+            {
+                Console.WriteLine("Your number is positive.");
+            }
+            else if (number < 0)
+            {
+                Console.WriteLine("Your number is negative.");
+            }
+            else
+            {
+                Console.WriteLine("Your number is neutral.");
+            }
+        }
+
+        public static bool OldEnoughToVote(int age)
+        {
+            return age >= 18;
+        }
+
+        public static bool TenByNegTen(int number, int min, int max)
+        {
+            return number >= min && number <= max;
+        }
+
+        public static void TimesTable(int input1)
+        {
+            Console.WriteLine($"Multiplication table for {input1}:");
+
+            for (int i = 1; i <= 12; i++)
+            {
+                int result = input1 * i;
+                Console.WriteLine($"{input1} x {i} = {result}");
+            }
+        }
+
     }
 }
 
